@@ -906,7 +906,7 @@ export default function App(){
       <style>{`@keyframes pulse{0%{opacity:1}50%{opacity:.3}100%{opacity:1}} *{box-sizing:border-box} button{cursor:pointer;border:none;background:none;font-family:inherit} select,input{font-family:inherit} table{width:100%}`}</style>
 
       <header style={{background:T.green900,color:"#fff",position:"sticky",top:0,zIndex:40}}>
-        <div style={{maxWidth:1120,margin:"0 auto",padding:"0 16px"}} className="flex items-center gap-3 flex-wrap">
+        <div style={{maxWidth:1440,margin:"0 auto",padding:"0 16px"}} className="flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-2 py-3" style={{marginRight:4}}>
             <div style={{width:34,height:34,borderRadius:9,background:T.gold,display:"flex",alignItems:"center",justifyContent:"center"}}><Star size={20} color={T.green900} fill={T.green900}/></div>
             <div style={{lineHeight:1}}><div style={{fontWeight:800,letterSpacing:1,fontSize:15}}>FECAFOOT</div><div style={{fontSize:9,color:T.gold,letterSpacing:2}}>PLATEFORME</div></div>
@@ -925,14 +925,14 @@ export default function App(){
         </div>
       </header>
 
-      <main style={{maxWidth:1120,margin:"0 auto",padding:"22px 16px 40px",width:"100%",flex:1}}>
+      <main style={{maxWidth:1440,margin:"0 auto",padding:"22px 16px 40px",width:"100%",flex:1}}>
         {view==="home" && <Dashboard ctx={ctx} go={setView} openMatch={openMatch} openClub={openClub} openPlayer={openPlayer}/>}
         {view==="comp" && <Competitions ctx={ctx} openMatch={openMatch} openClub={openClub} openPlayer={openPlayer}/>}
         {view==="scout" && <Scouting universe={universe} locked={!staff} unlock={()=>setStaff(true)}/>}
       </main>
 
       <footer style={{borderTop:`1px solid ${T.line}`,background:"#fff",marginTop:"auto"}}>
-        <div style={{maxWidth:1120,margin:"0 auto",padding:16,fontSize:12,color:T.muted}} className="flex flex-wrap items-center gap-2">
+        <div style={{maxWidth:1440,margin:"0 auto",padding:16,fontSize:12,color:T.muted}} className="flex flex-wrap items-center gap-2">
           <Star size={14} color={T.goldDeep}/><b style={{color:T.green800}}>FECAFOOT - Plateforme unifiée</b>
           <span>· Démo · clubs réels, statistiques simulées</span>
           <span style={{marginLeft:"auto"}}>Hub public + Détection · Hommes &amp; Femmes · 4 saisons · 10 régions</span>
