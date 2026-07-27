@@ -339,10 +339,10 @@ function Dashboard({ ctx, go, openMatch, openClub, openPlayer }){
       <div className="grid gap-5" style={{gridTemplateColumns:"repeat(auto-fit, minmax(300px, 1fr))"}}>
         <Panel title="Classement" icon={<Trophy size={16}/>} action={()=>go("comp")} actionLabel="Voir tout">
           {sim.standings.slice(0,5).map((t,i)=>(
-            <div key={t.id} onClick={()=>openClub(t.id)} className="flex items-center gap-3 py-2" style={{borderTop:i?`1px solid ${T.line}`:"none",cursor:"pointer"}}>
-              <span style={{width:18,textAlign:"center",fontWeight:800,color:i===0?T.goldDeep:T.muted,...num}}>{i+1}</span>
-              <Crest c={t}/><span style={{flex:1,fontWeight:600,fontSize:13,color:T.ink}}>{t.name}</span>
-              <span style={{fontWeight:800,color:T.green800,...num}}>{t.pts}</span>
+            <div key={t.id} onClick={()=>openClub(t.id)} className="flex items-center gap-3 py-2.5" style={{borderTop:i?`1px solid ${T.line}`:"none",cursor:"pointer",minHeight:44}}>
+              <span style={{width:18,textAlign:"center",fontWeight:800,fontSize:14,color:i===0?T.goldDeep:T.muted,...num}}>{i+1}</span>
+              <Crest c={t} size={28}/><span style={{flex:1,fontWeight:600,fontSize:14,color:T.ink}}>{t.name}</span>
+              <span style={{fontWeight:800,fontSize:14,color:T.green800,...num}}>{t.pts}</span>
             </div>
           ))}
         </Panel>
@@ -351,18 +351,18 @@ function Dashboard({ ctx, go, openMatch, openClub, openPlayer }){
         </Panel>
         <Panel title="Meilleurs buteurs" icon={<Target size={16}/>} action={()=>go("comp")} actionLabel="Détails">
           {sim.topScorers.slice(0,5).map((s,i)=>{ const c=clubById(s.clubId); const max=sim.topScorers[0].g||1; return (
-            <div key={s.pid} className="py-2" style={{borderTop:i?`1px solid ${T.line}`:"none",cursor:"pointer"}} onClick={()=>openPlayer(s.pid)}>
-              <div className="flex items-center gap-2"><Crest c={c} size={22}/><span style={{flex:1,fontSize:13,fontWeight:600,color:T.ink}}>{s.name}</span><span style={{fontWeight:800,...num}}>{s.g}</span></div>
-              <div style={{height:5,background:T.line,borderRadius:3,marginTop:6}}><div style={{width:`${s.g/max*100}%`,height:"100%",background:T.gold,borderRadius:3}}/></div>
+            <div key={s.pid} className="py-2.5" style={{borderTop:i?`1px solid ${T.line}`:"none",cursor:"pointer",minHeight:44}} onClick={()=>openPlayer(s.pid)}>
+              <div className="flex items-center gap-2"><Crest c={c} size={26}/><span style={{flex:1,fontSize:14,fontWeight:600,color:T.ink}}>{s.name}</span><span style={{fontWeight:800,fontSize:14,...num}}>{s.g}</span></div>
+              <div style={{height:5,background:T.line,borderRadius:3,marginTop:7}}><div style={{width:`${s.g/max*100}%`,height:"100%",background:T.gold,borderRadius:3}}/></div>
             </div>
           ); })}
         </Panel>
         <Panel title="Talents à suivre" icon={<Star size={16}/>} action={()=>go("scout")} actionLabel="Ouvrir le scouting">
           {buildTalents(universe).slice(0,5).map((p,i)=>(
-            <div key={p.id} className="flex items-center gap-3 py-2" style={{borderTop:i?`1px solid ${T.line}`:"none"}}>
-              <div style={{width:30,height:30,borderRadius:8,background:T.green100,color:T.green800,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:12,...num}}>{p.age}</div>
-              <div style={{flex:1}}><div style={{fontSize:13,fontWeight:700,color:T.ink}}>{p.name}</div><div style={{fontSize:11,color:T.muted}}>{p.poste} · {p.region}</div></div>
-              <div style={{fontWeight:800,color:T.goldDeep,...num}}>{p.pot}</div>
+            <div key={p.id} className="flex items-center gap-3 py-2.5" style={{borderTop:i?`1px solid ${T.line}`:"none",minHeight:44}}>
+              <div style={{width:32,height:32,borderRadius:8,background:T.green100,color:T.green800,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:800,fontSize:13,flexShrink:0,...num}}>{p.age}</div>
+              <div style={{flex:1}}><div style={{fontSize:14,fontWeight:700,color:T.ink}}>{p.name}</div><div style={{fontSize:12,color:T.muted}}>{p.poste} · {p.region}</div></div>
+              <div style={{fontWeight:800,fontSize:14,color:T.goldDeep,...num}}>{p.pot}</div>
             </div>
           ))}
         </Panel>
@@ -374,15 +374,17 @@ function Dashboard({ ctx, go, openMatch, openClub, openPlayer }){
 function MatchRow({ m, top, onClick }){
   const h=clubById(m.home), a=clubById(m.away); const live=m.state==="live", played=m.state==="joué";
   return (
-    <div onClick={onClick} className="flex items-center gap-2 py-2" style={{borderTop:top?`1px solid ${T.line}`:"none",cursor:"pointer"}}>
+    <div onClick={onClick} className="flex items-center gap-2 py-2.5" style={{borderTop:top?`1px solid ${T.line}`:"none",cursor:"pointer",minHeight:48}}>
       <div className="flex items-center gap-2" style={{flex:1,justifyContent:"flex-end"}}>
-        <span style={{fontSize:12,fontWeight:600,color:T.ink,textAlign:"right"}}>{h.short}</span><Crest c={h} size={22}/>
+        <span style={{fontSize:13,fontWeight:600,color:T.ink,textAlign:"right"}}>{h.short}</span><Crest c={h} size={26}/>
       </div>
-      <div style={{minWidth:64,textAlign:"center"}}>
-        {(played||live)? <span style={{fontWeight:800,color:live?T.red:T.ink,...num}}>{m.gh} - {m.ga}</span> : <span style={{fontSize:12,color:T.muted,fontWeight:700}}>vs</span>}
-        {live && <div style={{fontSize:9,color:T.red,fontWeight:800,display:"flex",gap:4,alignItems:"center",justifyContent:"center"}}><span style={{width:6,height:6,borderRadius:9,background:T.red,display:"inline-block",animation:"pulse 1.2s infinite"}}/>{m.minute}′</div>}
+      <div style={{minWidth:70,textAlign:"center"}}>
+        {(played||live)? <span style={{fontSize:14,fontWeight:800,color:live?T.red:T.ink,...num}}>{m.gh} - {m.ga}</span> : <span style={{fontSize:13,color:T.muted,fontWeight:700}}>vs</span>}
+        <div style={{height:13}}>
+          {live && <div style={{fontSize:9,color:T.red,fontWeight:800,display:"flex",gap:4,alignItems:"center",justifyContent:"center"}}><span style={{width:6,height:6,borderRadius:9,background:T.red,display:"inline-block",animation:"pulse 1.2s infinite"}}/>{m.minute}′</div>}
+        </div>
       </div>
-      <div className="flex items-center gap-2" style={{flex:1}}><Crest c={a} size={22}/><span style={{fontSize:12,fontWeight:600,color:T.ink}}>{a.short}</span></div>
+      <div className="flex items-center gap-2" style={{flex:1}}><Crest c={a} size={26}/><span style={{fontSize:13,fontWeight:600,color:T.ink}}>{a.short}</span></div>
     </div>
   );
 }
