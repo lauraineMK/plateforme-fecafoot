@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samuel Eto'o - Le Lion Indomptable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Archivo:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#08130D;
+    --bg-2:#0D1F16;
+    --surface:#122A1E;
+    --line:#1E4130;
+    --gold:#F2C21A;
+    --gold-soft:#E8B923;
+    --green:#0B9C5A;
+    --red:#E0362B;
+    --ink:#F4F2E9;
+    --muted:#93A79A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .eyebrow{
+    font-family:'Archivo',sans-serif;
+    font-weight:700;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--gold);
+  }
+  h2.section-title{
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    text-transform:uppercase;
+    font-size:clamp(2.1rem,6vw,3.6rem);
+    letter-spacing:.01em;
+    line-height:.98;
+    margin:.35em 0 1.1em;
+  }
+  section{padding:clamp(70px,10vw,120px) 0;position:relative}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+    position:relative;overflow:hidden;
+    background:radial-gradient(120% 80% at 70% 10%,#123C28 0%,var(--bg) 55%);
+  }
+  .hero .nine{
+    position:absolute;right:-4vw;top:50%;transform:translateY(-50%);
+    font-family:'Anton',sans-serif;font-size:78vh;line-height:1;
+    color:transparent;-webkit-text-stroke:2px rgba(242,194,26,.16);
+    pointer-events:none;user-select:none;
+  }
+  .hero .star{
+    position:absolute;left:8%;top:18%;width:22px;height:22px;color:var(--gold);
+    opacity:.9;animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{0%,100%{opacity:.4;transform:scale(.9)}50%{opacity:1;transform:scale(1.1)}}
+  .hero-inner{position:relative;z-index:2}
+  .kicker{
+    display:inline-flex;align-items:center;gap:10px;margin-bottom:26px;
+    font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.22em;
+    text-transform:uppercase;font-size:.75rem;color:var(--muted);
+  }
+  .kicker .dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .hero h1{
+    font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:clamp(3.4rem,13vw,9rem);line-height:.86;letter-spacing:.005em;
+  }
+  .hero h1 .row2{color:var(--gold);display:block}
+  .hero .tag{
+    margin-top:26px;font-size:clamp(1rem,2.4vw,1.35rem);color:var(--ink);
+    max-width:38ch;font-weight:500;
+  }
+  .flag-bar{display:flex;gap:0;width:120px;height:6px;margin-top:34px;border-radius:3px;overflow:hidden}
+  .flag-bar span{flex:1}
+  .flag-bar .g{background:var(--green)}
+  .flag-bar .r{background:var(--red)}
+  .flag-bar .y{background:var(--gold)}
+  .scroll-hint{
+    position:absolute;bottom:34px;left:24px;z-index:2;font-size:.75rem;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--muted);
+    display:flex;align-items:center;gap:10px;
+  }
+  .scroll-hint .line{width:40px;height:1px;background:var(--muted);position:relative;overflow:hidden}
+  .scroll-hint .line::after{content:"";position:absolute;inset:0;background:var(--gold);animation:slide 2.4s ease-in-out infinite}
+  @keyframes slide{0%{transform:translateX(-100%)}60%,100%{transform:translateX(100%)}}
+
+  /* ---------- STATS ---------- */
+  .stats{background:var(--bg-2)}
+  .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .stat{background:var(--bg-2);padding:34px 26px;text-align:left}
+  .stat .num{font-family:'Anton',sans-serif;font-size:clamp(2.6rem,6vw,4rem);line-height:1;color:var(--gold)}
+  .stat .lbl{margin-top:10px;font-size:.82rem;color:var(--muted);letter-spacing:.04em}
+  @media(max-width:720px){.stat-grid{grid-template-columns:repeat(2,1fr)}}
+
+  /* ---------- TIMELINE (clubs) ---------- */
+  .timeline{background:var(--bg)}
+  .clubs{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}
+  .club-chip{
+    font-family:'Archivo',sans-serif;font-weight:600;font-size:.85rem;
+    padding:11px 18px;border:1px solid var(--line);border-radius:100px;
+    background:transparent;color:var(--muted);cursor:pointer;transition:all .22s ease;
+    letter-spacing:.02em;
+  }
+  .club-chip:hover{border-color:var(--gold-soft);color:var(--ink);transform:translateY(-2px)}
+  .club-chip.active{background:var(--gold);color:#0A0A0A;border-color:var(--gold)}
+  .club-panel{
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;
+    padding:clamp(26px,4vw,44px);min-height:180px;position:relative;overflow:hidden;
+  }
+  .club-panel::before{
+    content:attr(data-years);position:absolute;right:26px;top:14px;
+    font-family:'Anton',sans-serif;font-size:clamp(3rem,10vw,6rem);
+    color:rgba(242,194,26,.07);letter-spacing:.02em;
+  }
+  .club-panel h3{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.8rem,4vw,2.6rem);text-transform:uppercase;position:relative}
+  .club-panel .era{color:var(--gold);font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:.1em;font-size:.8rem;text-transform:uppercase;margin-bottom:6px}
+  .club-panel p{margin-top:14px;max-width:60ch;color:#D7E0D9;position:relative}
+  .club-panel .honors{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;position:relative}
+  .honors .h{font-size:.78rem;background:var(--bg-2);border:1px solid var(--line);padding:6px 12px;border-radius:8px;color:var(--muted)}
+  .honors .h.gold{border-color:rgba(242,194,26,.4);color:var(--gold)}
+
+  /* ---------- TROPHIES ---------- */
+  .trophies{background:var(--bg-2)}
+  .cabinet{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tcard{background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:30px 26px;transition:transform .22s ease,border-color .22s ease}
+  .tcard:hover{transform:translateY(-4px);border-color:var(--gold-soft)}
+  .tcard .cnt{font-family:'Anton',sans-serif;font-size:2.6rem;color:var(--gold);line-height:1}
+  .tcard .tt{margin-top:8px;font-weight:600}
+  .tcard .sub{margin-top:6px;color:var(--muted);font-size:.85rem}
+  @media(max-width:720px){.cabinet{grid-template-columns:1fr}}
+
+  /* ---------- NOW ---------- */
+  .now{background:var(--bg)}
+  .now-card{
+    background:linear-gradient(135deg,var(--surface),var(--bg-2));
+    border:1px solid var(--line);border-left:4px solid var(--gold);
+    border-radius:16px;padding:clamp(28px,4vw,46px);
+  }
+  .now-card h3{font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(1.6rem,4vw,2.4rem);text-transform:uppercase}
+  .now-card p{margin-top:14px;max-width:62ch;color:#D7E0D9}
+
+  /* ---------- DEDICACE ---------- */
+  .dedicace{background:var(--bg-2);text-align:center}
+  .dedicace .quote{
+    font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;
+    font-size:clamp(1.8rem,5vw,3.2rem);line-height:1.05;max-width:20ch;margin:0 auto;
+  }
+  .dedicace .quote em{color:var(--gold);font-style:normal}
+  .dedicace .sign{margin-top:34px;color:var(--muted);font-size:.9rem;letter-spacing:.05em}
+  .dedicace .sign strong{color:var(--ink)}
+
+  footer{padding:40px 0;text-align:center;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .hero .star,.scroll-hint .line::after{animation:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="nine">9</div>
+  <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 17.8 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg>
+  <div class="wrap hero-inner">
+    <span class="kicker"><span class="dot"></span>Cameroun · Attaquant · Légende</span>
+    <h1>Samuel<span class="row2">Eto'o</span></h1>
+    <p class="tag">Le Lion Indomptable. Quadruple Ballon d'Or africain (2003, 2004, 2005, 2010). Un parcours devenu héritage.</p>
+    <div class="flag-bar"><span class="g"></span><span class="r"></span><span class="y"></span></div>
+  </div>
+  <div class="scroll-hint"><span class="line"></span>Découvrir le parcours</div>
+</header>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="wrap">
+    <span class="eyebrow reveal">En chiffres</span>
+    <h2 class="section-title reveal">Une carrière hors norme</h2>
+    <div class="stat-grid reveal">
+      <div class="stat"><div class="num" data-count="3">0</div><div class="lbl">Ligues des Champions</div></div>
+      <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">Fois Ballon d'Or africain</div></div>
+      <div class="stat"><div class="num" data-count="56">0</div><div class="lbl">Buts avec le Cameroun</div></div>
+      <div class="stat"><div class="num" data-count="18">0</div><div class="lbl">Buts en CAN (record)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline">
+  <div class="wrap">
+    <span class="eyebrow reveal">Le voyage</span>
+    <h2 class="section-title reveal">De Douala aux sommets d'Europe</h2>
+    <div class="clubs reveal" id="clubs"></div>
+    <div class="club-panel reveal" id="panel"></div>
+  </div>
+</section>
+
+<!-- TROPHIES -->
+<section class="trophies">
+  <div class="wrap">
+    <span class="eyebrow reveal">Le palmarès</span>
+    <h2 class="section-title reveal">Une armoire à trophées</h2>
+    <div class="cabinet">
+      <div class="tcard reveal"><div class="cnt">×3</div><div class="tt">Ligue des Champions</div><div class="sub">2006 &amp; 2009 (Barça), 2010 (Inter)</div></div>
+      <div class="tcard reveal"><div class="cnt">×2</div><div class="tt">Coupe d'Afrique des Nations</div><div class="sub">2000 &amp; 2002 avec le Cameroun</div></div>
+      <div class="tcard reveal"><div class="cnt">×1</div><div class="tt">Or olympique</div><div class="sub">Jeux de Sydney, 2000</div></div>
+      <div class="tcard reveal"><div class="cnt">×1</div><div class="tt">Triplé historique</div><div class="sub">Serie A · Coupe · C1 avec l'Inter (2010)</div></div>
+      <div class="tcard reveal"><div class="cnt">×3</div><div class="tt">Liga espagnole</div><div class="sub">Titres remportés avec le FC Barcelone</div></div>
+      <div class="tcard reveal"><div class="cnt">×4</div><div class="tt">Joueur africain de l'année</div><div class="sub">Élu en 2003, 2004, 2005 et 2010</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NOW -->
+<section class="now">
+  <div class="wrap">
+    <span class="eyebrow reveal">Aujourd'hui</span>
+    <h2 class="section-title reveal">Du terrain au bureau</h2>
+    <div class="now-card reveal">
+      <h3>Président de la FECAFOOT</h3>
+      <p>Élu à la tête de la Fédération Camerounaise de Football le 11 décembre 2021, puis réélu le 29 novembre 2025 pour un second mandat de quatre ans (jusqu'en 2029), Samuel Eto'o a engagé la modernisation du football camerounais : nouveau siège inauguré à Yaoundé, réformes des clubs professionnels et ambition de professionnaliser durablement la gestion du ballon rond. Le Lion continue de rugir, autrement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DEDICACE (à personnaliser) -->
+<section class="dedicace">
+  <div class="wrap">
+    <span class="eyebrow reveal">Dédicace</span>
+    <p class="quote reveal">Merci d'avoir fait rêver tout un <em>continent</em>.</p>
+    <p class="sign reveal">Un hommage codé avec admiration par <strong>Lauraine Moukoko</strong><br>Ingénieure réseau &amp; sécurité</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Page hommage non officielle · Créée par une passionnée · 2026</div>
+</footer>
+
+<script>
+// ---- Career data ----
+const CLUBS = [
+  {name:"Real Madrid", years:"'97-'00", era:"Les débuts", text:"Arrivé très jeune en Espagne, le jeune Camerounais fait ses classes dans le plus grand club du monde, avant d'être prêté pour engranger du temps de jeu.", honors:[]},
+  {name:"RCD Majorque", years:"'00-'04", era:"L'éclosion", text:"C'est à Majorque que le talent explose. Eto'o s'impose comme l'un des meilleurs attaquants de Liga et attire les regards des géants européens.", honors:[["Copa del Rey 2003","gold"]]},
+  {name:"FC Barcelone", years:"'04-'09", era:"La consécration", text:"Au cœur de l'une des meilleures équipes de l'histoire, aux côtés de Ronaldinho puis Messi, Eto'o devient l'un des attaquants les plus redoutés de la planète.", honors:[["Ligue des Champions ×2","gold"],["Liga ×3","gold"],["Copa del Rey"]]},
+  {name:"Inter Milan", years:"'09-'11", era:"Le triplé", text:"Sous José Mourinho, il réalise en 2010 un triplé historique : championnat, coupe et Ligue des Champions, devenant l'un des rares à gagner trois C1 avec deux clubs différents.", honors:[["Triplé 2010","gold"],["Serie A"],["Coppa Italia"]]},
+  {name:"Anzhi", years:"'11-'13", era:"Le pari russe", text:"Il rejoint l'Anzhi Makhatchkala et devient l'un des footballeurs les mieux payés au monde, tout en restant décisif sur le terrain.", honors:[]},
+  {name:"Chelsea", years:"'13-'14", era:"Le retour au sommet", text:"Retour en Premier League sous Mourinho, où il prouve qu'à plus de 30 ans, son instinct de buteur reste intact.", honors:[]},
+  {name:"Everton & +", years:"'14-'19", era:"Le vétéran voyageur", text:"Everton, Sampdoria, puis la Turquie (Antalyaspor, Konyaspor) : il continue de marquer et de transmettre son expérience jusqu'au bout.", honors:[]}
+];
+
+const clubsEl = document.getElementById('clubs');
+const panel = document.getElementById('panel');
+function render(i){
+  const c = CLUBS[i];
+  [...clubsEl.children].forEach((b,idx)=>b.classList.toggle('active',idx===i));
+  panel.setAttribute('data-years', c.years);
+  panel.innerHTML = `<div class="era">${c.era}</div><h3>${c.name}</h3><p>${c.text}</p>`+
+    (c.honors.length?`<div class="honors">${c.honors.map(h=>`<span class="h ${h[1]||''}">${h[0]}</span>`).join('')}</div>`:'');
+}
+CLUBS.forEach((c,i)=>{
+  const b=document.createElement('button');
+  b.className='club-chip';b.textContent=c.name;
+  b.onclick=()=>render(i);
+  clubsEl.appendChild(b);
+});
+render(2); // start on Barcelona
+
+// ---- Count-up ----
+function animateCount(el){
+  const target=+el.dataset.count, dur=1400, t0=performance.now();
+  function step(now){
+    const p=Math.min((now-t0)/dur,1);
+    const eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(eased*target);
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ---- Reveal on scroll ----
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll?.('[data-count]').forEach(animateCount);
+      if(e.target.dataset && e.target.dataset.count) animateCount(e.target);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.2});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
