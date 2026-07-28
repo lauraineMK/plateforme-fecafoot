@@ -1,0 +1,177 @@
+LICENCE - TOUS DROITS RÉSERVÉS
+================================
+
+Copyright © 2026 Lauraine Moukoko. Tous droits réservés.
+
+------------------------------------------------------------------------------
+VERSION FRANÇAISE
+------------------------------------------------------------------------------
+
+1. OBJET
+
+La présente licence s'applique à l'ensemble du projet « Plateforme FECAFOOT »
+(le « Projet »), incluant sans s'y limiter :
+  - le code source, sous quelque langage ou format que ce soit ;
+  - les fichiers de configuration, scripts et outils associés ;
+  - le design, l'interface utilisateur, la charte graphique et les visuels ;
+  - le concept, la structure fonctionnelle et l'architecture du Projet ;
+  - la documentation, les textes et tout autre contenu original qui l'accompagne.
+
+L'ensemble de ces éléments est ci-après désigné collectivement l'« Œuvre ».
+
+2. TITULAIRE DES DROITS
+
+L'Œuvre est une création originale de Lauraine Moukoko (l'« Auteure »), qui en
+est l'unique titulaire des droits d'auteur et de tout autre droit de propriété
+intellectuelle applicable, en vertu du droit camerounais, français et des
+conventions internationales relatives au droit d'auteur (notamment la
+Convention de Berne).
+
+3. AUCUNE LICENCE ACCORDÉE
+
+Contrairement aux licences open source (MIT, GPL, Apache, etc.), la présente
+licence n'accorde AUCUN droit d'utilisation, de reproduction, de modification
+ou de distribution de l'Œuvre. La simple consultation ou disponibilité du
+code source (par exemple sur un dépôt public) ne constitue en aucun cas une
+autorisation d'exploitation, explicite ou implicite.
+
+4. INTERDICTIONS EXPRESSES
+
+Sauf accord écrit préalable de l'Auteure, il est strictement interdit à toute
+personne physique ou morale de :
+  a) copier, dupliquer ou reproduire tout ou partie du code source, du design,
+     de l'interface, du concept ou de tout contenu de l'Œuvre ;
+  b) modifier, adapter, traduire ou créer une œuvre dérivée à partir de
+     l'Œuvre ou de l'un quelconque de ses éléments ;
+  c) réutiliser, réexploiter ou intégrer tout ou partie de l'Œuvre dans un
+     autre projet, produit ou service, à titre gratuit ou onéreux ;
+  d) distribuer, publier, sous-licencier, louer, prêter ou mettre à
+     disposition l'Œuvre ou toute copie de celle-ci, sous quelque forme que
+     ce soit ;
+  e) exploiter commercialement l'Œuvre ou l'un de ses éléments, directement
+     ou indirectement ;
+  f) décompiler, désassembler ou tenter d'extraire le code source d'une
+     version compilée ou minifiée de l'Œuvre, sauf dans les cas où la loi
+     applicable l'autoriserait de manière impérative.
+
+5. NOMS, MARQUES ET IDENTITÉ VISUELLE
+
+Le nom « FECAFOOT », les dénominations, logos, couleurs et éléments visuels
+utilisés dans le Projet appartiennent à leurs titulaires respectifs et/ou
+sont utilisés à titre illustratif et non officiel. Ils ne sont couverts par
+aucune autorisation d'usage accordée par la présente licence.
+
+6. DEMANDE D'AUTORISATION
+
+Toute personne souhaitant obtenir une autorisation d'utilisation, de
+reproduction, de modification ou d'exploitation de l'Œuvre, en tout ou
+partie, doit obtenir l'accord écrit préalable et exprès de l'Auteure. Une
+telle autorisation, si elle est accordée, fera l'objet d'un accord distinct
+précisant son étendue, sa durée et ses conditions.
+
+7. ABSENCE DE GARANTIE
+
+L'ŒUVRE EST FOURNIE « EN L'ÉTAT », SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU
+IMPLICITE, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ
+MARCHANDE, D'ADÉQUATION À UN USAGE PARTICULIER ET D'ABSENCE DE CONTREFAÇON.
+EN AUCUN CAS L'AUTEURE NE POURRA ÊTRE TENUE RESPONSABLE DE TOUT DOMMAGE
+DIRECT OU INDIRECT RÉSULTANT DE L'UTILISATION OU DE L'IMPOSSIBILITÉ
+D'UTILISER L'ŒUVRE.
+
+8. SANCTIONS
+
+Toute violation de la présente licence expose son auteur à des poursuites
+civiles et/ou pénales sur le fondement du droit de la propriété
+intellectuelle applicable, sans préjudice de tout autre recours dont
+disposerait l'Auteure.
+
+9. DROIT APPLICABLE
+
+La présente licence est régie par le droit camerounais. Tout litige relatif
+à son interprétation ou à son exécution relève de la compétence exclusive
+des juridictions camerounaises, sauf disposition impérative contraire.
+
+------------------------------------------------------------------------------
+ENGLISH VERSION
+------------------------------------------------------------------------------
+
+1. SCOPE
+
+This license applies to the entire "Plateforme FECAFOOT" project (the
+"Project"), including without limitation:
+  - the source code, in any language or format;
+  - configuration files, scripts and associated tooling;
+  - the design, user interface, visual identity and graphics;
+  - the concept, functional structure and architecture of the Project;
+  - the documentation, text and any other original content accompanying it.
+
+All of the foregoing are collectively referred to as the "Work".
+
+2. OWNERSHIP
+
+The Work is an original creation of Lauraine Moukoko (the "Author"), who is
+the sole owner of the copyright and any other applicable intellectual
+property rights therein, under Cameroonian law, French law, and applicable
+international copyright conventions (including the Berne Convention).
+
+3. NO LICENSE GRANTED
+
+Unlike open-source licenses (MIT, GPL, Apache, etc.), this license grants NO
+right to use, reproduce, modify, or distribute the Work. The mere
+availability or visibility of the source code (for example, in a public
+repository) does not, under any circumstances, constitute an authorization
+to exploit it, whether explicit or implied.
+
+4. EXPRESS PROHIBITIONS
+
+Unless prior written consent has been obtained from the Author, no
+individual or entity may:
+  a) copy, duplicate or reproduce all or part of the source code, design,
+     interface, concept, or any content of the Work;
+  b) modify, adapt, translate, or create a derivative work based on the
+     Work or any of its components;
+  c) reuse, repurpose, or incorporate all or part of the Work into another
+     project, product, or service, whether free of charge or for
+     compensation;
+  d) distribute, publish, sublicense, rent, lend, or otherwise make
+     available the Work or any copy thereof, in any form whatsoever;
+  e) commercially exploit the Work or any of its components, directly or
+     indirectly;
+  f) decompile, disassemble, or attempt to extract the source code from a
+     compiled or minified version of the Work, except to the extent such
+     activity is expressly permitted by mandatory applicable law.
+
+5. NAMES, TRADEMARKS AND VISUAL IDENTITY
+
+The name "FECAFOOT", and any related names, logos, colors, and visual
+elements used in the Project belong to their respective owners and/or are
+used for illustrative, unofficial purposes only. They are not covered by
+any usage authorization granted under this license.
+
+6. REQUESTING PERMISSION
+
+Any person wishing to obtain authorization to use, reproduce, modify, or
+exploit the Work, in whole or in part, must obtain the Author's prior
+express written consent. If granted, such authorization will be subject to
+a separate agreement specifying its scope, duration, and conditions.
+
+7. NO WARRANTY
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL
+THE AUTHOR BE LIABLE FOR ANY DIRECT OR INDIRECT DAMAGES ARISING FROM THE USE
+OR INABILITY TO USE THE WORK.
+
+8. ENFORCEMENT
+
+Any violation of this license exposes the offending party to civil and/or
+criminal liability under applicable intellectual property law, without
+prejudice to any other remedy available to the Author.
+
+9. GOVERNING LAW
+
+This license is governed by the laws of Cameroon. Any dispute concerning
+its interpretation or performance shall fall under the exclusive
+jurisdiction of the courts of Cameroon, unless otherwise required by
+mandatory law.

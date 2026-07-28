@@ -939,6 +939,7 @@ export default function App(){
           <Star size={14} color={T.goldDeep}/><b style={{color:T.green800}}>FECAFOOT - Plateforme unifiée</b>
           <span>· Démo · clubs réels, statistiques simulées</span>
           <span style={{marginLeft:"auto"}}>Hub public + Détection · Hommes &amp; Femmes · 4 saisons · 10 régions</span>
+          <span style={{flexBasis:"100%",textAlign:"center",marginTop:4}}>© 2026 Lauraine Moukoko</span>
         </div>
       </footer>
 
